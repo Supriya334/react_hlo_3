@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boilerplate Code</title>
+    <style>
+        body{
+            background: url(https://thecricketlounge.com/wp-content/uploads/2023/02/httpi.imgur_.comIbK3We9.gif)no-repeat;
+           background-size: cover;
+        }
+        #div{
+            background-color: rgb(69, 210, 30);
+            text-align: center;
+            height: 400px;
+            width: 200px;
+            margin: auto;
+           
+        }
+    #main{
+        background-color: rgb(137, 226, 43);
+        text-align: center;
+        font-size: 37px;
+
+    }
+
+    .btn3{
+        background-color: rgb(223, 175, 247);
+        border-radius: 12px;
+        border: none;
+        height: 40px;
+        width: 120px;
+     margin: 10px;
+    }
+    .btn3:hover{
+background-color: aquamarine;
+cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    // Code goes here
+    let CricketScoreboard = function () {
+
+let [run,setRun] = React.useState(0)
+let [wicket,setWicket]=React.useState(0)
+
+
+function increment3(){
+    { wicket < 10 ? setRun(run+3) : allOut()}
+}
+
+
+
+function increment4(){
+    {wicket < 10 ?   setRun(run+4) : allOut()}
+}
+
+
+
+function increment8(){
+    { wicket < 10 ? setRun(run+8) :allOut()}
+
+}
+
+
+
+function incrementW(){
+    { wicket <10 ?setWicket(wicket+1)  :allOut()}
+    
+}
+
+
+
+
+
+return(
+    <>
+    <div id="div">
+<p id="main">India={run}-{wicket}</p>
+<button class="btn3" onClick={increment3}>update by 3</button>
+<button  class="btn3" onClick={increment4}>update by 4</button>
+<button  class="btn3" onClick={increment8}>update by 8</button>
+<button class="btn3" onClick={incrementW}>update wicket</button>
+
+</div>
+
+    </>
+
+
+
+)
+    }
+
+function allOut(){
+    return(
+    <p>Team Is All Out</p>
+    )
+}
+
+
+
+
+    const reactRoot = document.getElementById("root");
+
+
+
+    const abc = ReactDOM.createRoot(reactRoot)
+    abc.render(<CricketScoreboard/>)
+
+</script>
+
+</html>
